@@ -1,0 +1,458 @@
+\documentclass[12pt,openany,a4paper]{book}
+\usepackage{graphics}	% if you want encapsulated PS figures.
+
+% If you use a macro file called macros.tex :
+% \input{macros}
+% Note: The present document has its macros built in.
+
+% Number subsections but not subsubsections:
+\setcounter{secnumdepth}{2}
+% Show subsections but not subsubsections in table of contents:
+\setcounter{tocdepth}{2}
+
+\pagestyle{headings}		% Chapter on left page, Section on right.
+\raggedbottom
+
+\setlength{\topmargin}		{-5mm}  %  25-5 = 20mm
+\setlength{\oddsidemargin}	{10mm}  % rhs page inner margin = 25+10mm
+\setlength{\evensidemargin}	{0mm}   % lhs page outer margin = 25mm
+\setlength{\textwidth}		{150mm} % 35 + 150 + 25 = 210mm
+\setlength{\textheight}		{240mm} % 
+
+\renewcommand{\baselinestretch}{1.2}	% Looks like 1.5 spacing.
+
+% Stop figure/tables smaller than 3/4 page from appearing alone on a page:
+\renewcommand{\textfraction}{0.25}
+\renewcommand{\topfraction}{0.75}
+\renewcommand{\bottomfraction}{0.75}
+\renewcommand{\floatpagefraction}{0.75}
+
+% THEOREM-LIKE ENVIRONMENTS:
+\newtheorem{defn}	{Definition}	% cf. \dfn for cross-referencing
+\newtheorem{theorem}	{Theorem}	% cf. \thrm for cross-referencing
+\newtheorem{lemma}	{Lemma}		% cf. \lem for cross-referencing
+
+% AIDS TO CROSS-REFERENCING (All take a label as argument):
+\newcommand{\eref}[1] {(\ref{#1})}		% (...)
+\newcommand{\eq}[1]   {Eq.\,(\ref{#1})}		% Eq.~(...)
+\newcommand{\eqs}[2]  {Eqs.~(\ref{#1}) and~(\ref{#2})}
+\newcommand{\dfn}[1]  {Definition~\ref{#1}}	% Definition~...
+\newcommand{\thrm}[1] {Theorem~\ref{#1}}	% Theorem~...
+\newcommand{\lem}[1]  {Lemma~\ref{#1}}		% Lemma~...
+\newcommand{\fig}[1]  {Fig.\,\ref{#1}}		% Fig.~...
+\newcommand{\tab}[1]  {Table~\ref{#1}}		% Table~...
+\newcommand{\chap}[1] {Chapter~\ref{#1}}	% Chapter~...
+\newcommand{\secn}[1] {Section~\ref{#1}}	% Section~...
+\newcommand{\ssec}[1] {Subsection~\ref{#1}}	% Subsection~...
+
+% AIDS TO FORMATTING:
+\newcommand{\teq}[1]	{\mbox{$#1$}}	% in-Text EQuation (unbreakable)
+\newcommand{\qed}	{\hspace*{\fill}$\bullet$}	% end of proof
+
+% MATHEMATICAL TEMPLATES:
+% Text or math mode:
+\newcommand{\half}	{\ensuremath{\frac{1}{2}}}	% one-half
+\newcommand{\halftxt}	{\mbox{$\frac{1}{2}$}}	  	% one-half, small
+% Math mode only:
+% N.B. Parentheses are ROUND; brackets are SQUARE!
+\newcommand{\oneon}[1]	{\frac{1}{#1}}		  % reciprocal
+\newcommand{\pow}[2]	{\left({#1}\right)^{#2}}  % Parenthesized pOWer
+\newcommand{\bow}[2]	{\left[{#1}\right]^{#2}}  % Bracketed pOWer
+\newcommand{\evalat}[2]	{\left.{#1}\right|_{#2}}  % EVALuated AT with bar
+\newcommand{\bevalat}[2]{\left[{#1}\right]_{#2}}  % Bracketed EVALuated AT
+% Total derivatives:
+\newcommand{\sdd}[2]	{\frac{d{#1}}{d{#2}}}		    % Short
+\newcommand{\sqdd}[2]	{\frac{d^2{#1}}{d{#2}^2}}	    % 2nd ("SQuared")
+\newcommand{\ldd}[2]	{\frac{d}{d{#1}}\left({#2}\right)}  % Long paren'ed
+\newcommand{\bdd}[2]	{\frac{d}{d{#2}}\left[{#2}\right]}  % long Bracketed
+% Partial derivatives (same sequence as for total derivatives):
+\newcommand{\sdada}[2]	{\frac{\partial {#1}}{\partial {#2}}}
+\newcommand{\sqdada}[2]	{\frac{\partial ^{2}{#1}}{\partial {#2}^{2}}}
+\newcommand{\ldada}[2]	{\frac{\partial}{\partial {#1}}\left({#2}\right)}
+\newcommand{\bdada}[2]	{\frac{\partial}{\partial {#1}}\left[{#2}\right]}
+\newcommand{\da}	{\partial}
+
+% ORDINAL NUMBERS:
+\newcommand{\ith}	{\ensuremath{i^{\rm th}}}
+\newcommand{\jth}	{\ensuremath{j^{\rm th}}}
+\newcommand{\kth}	{\ensuremath{k^{\rm th}}}
+\newcommand{\lth}	{\ensuremath{l^{\rm th}}}
+\newcommand{\mth}	{\ensuremath{m^{\rm th}}}
+\newcommand{\nth}	{\ensuremath{n^{\rm th}}}
+
+% SINUSOIDAL TIME AND SPACE-DEPENDENCY FACTORS:
+\newcommand{\ejot}	{\ensuremath{e^{j\omega t}}}
+\newcommand{\emjot}	{\ensuremath{e^{-j\omega t}}}
+
+% UNITS (TEXT OR MATH MODE, WITH LEADING PADDING SPACE IF APPLICABLE):
+% NB: These have not been tested since being modified for LaTeX2e.
+\newcommand{\pack}	{\hspace{-0.08em}}
+\newcommand{\Pack}	{\hspace{-0.12em}}
+\newcommand{\mA}	{\ensuremath{\rm\,m\pack A}}
+\newcommand{\dB}	{\ensuremath{\rm\,d\pack B}}
+\newcommand{\dBm}	{\ensuremath{\rm\,d\pack B\pack m}}
+\newcommand{\dBW}	{\ensuremath{\rm\,d\pack B\Pack W}}
+\newcommand{\uF}	{\ensuremath{\rm\,\mu\pack F}}
+\newcommand{\pF}	{\ensuremath{\rm\,p\pack F}}
+\newcommand{\nF}	{\ensuremath{\rm\,n\pack F}}
+\newcommand{\uH}	{\ensuremath{\rm\,\mu\pack H}}
+\newcommand{\mH}	{\ensuremath{\rm\,m\pack H}}
+\newcommand{\Hz}	{\ensuremath{\rm\,H\pack z}}
+\newcommand{\kHz}	{\ensuremath{\rm\,k\pack H\pack z}}
+\newcommand{\MHz}	{\ensuremath{\rm\,M\pack H\pack z}}
+\newcommand{\GHz}	{\ensuremath{\rm\,G\pack H\pack z}}
+\newcommand{\J}		{\ensuremath{\rm\,J}}
+\newcommand{\kg}	{\ensuremath{\rm\,k\pack g}}
+\newcommand{\K}		{\ensuremath{\rm\,K}}
+\newcommand{\m}		{\ensuremath{\rm\,m}}
+\newcommand{\cm}	{\ensuremath{\rm\,cm}}
+\newcommand{\km}	{\ensuremath{\rm\,k\pack m}}
+\newcommand{\mm}	{\ensuremath{\rm\,m\pack m}}
+\newcommand{\nm}	{\ensuremath{\rm\,n\pack m}}
+\newcommand{\um}	{\ensuremath{\rm\,\mu m}}
+\newcommand{\Np}	{\ensuremath{\rm\,N\pack p}}
+\newcommand{\s}		{\ensuremath{\rm\,s}}
+\newcommand{\ms}	{\ensuremath{\rm\,m\pack s}}
+\newcommand{\us}	{\ensuremath{\rm\,\mu s}}
+\newcommand{\V}		{\ensuremath{\rm\,V}}
+\newcommand{\mV}	{\ensuremath{\rm\,m\Pack V}}
+\newcommand{\W}		{\ensuremath{\rm\,W}}
+\newcommand{\mW}	{\ensuremath{\rm\,m\Pack W}}
+\newcommand{\ohm}	{\ensuremath{\rm\,\Omega}}
+\newcommand{\kohm}	{\ensuremath{\rm\,k\Omega}}
+\newcommand{\Mohm}	{\ensuremath{\rm\,M\Omega}}
+\newcommand{\degs}	{\ensuremath{\rm^{\circ}}}
+
+% LaTeX run-time type-in command:
+%
+% \typein{Enter \protect\includeonly{...} command (or just type RETURN):}
+%
+% Uncommenting this command makes LaTeX prompt you for the \includeonly
+% list.  At the prompt
+%
+%	\@typein=
+%
+% you type
+%
+%	\includeonly{chap1,chap2}
+%
+% to include the files chap1.tex and chap2.tex and omit any others.
+% To include every \include file, just hit RETURN.
+% If you are running LaTeX from xtexsh, you may need to click the mouse
+% in the LaTeX window to position the cursor at the \@typein prompt.
+
+\begin{document}
+
+\frontmatter
+% By default, frontmatter has Roman page-numbering (i,ii,...).
+
+\begin{titlepage}
+\renewcommand{\baselinestretch}{1.0}
+\begin{center}
+\vspace*{35mm}
+\Huge\bf
+		TITLE\\
+		OF YOUR\\
+		MAGNUM OPUS\\
+\vspace{20mm}
+\large\sl
+		by\\
+		AUTHOR'S NAME
+		\medskip\\
+\rm
+		Department of Electrical and Computer Engineering,\\
+		University of Queensland.\\
+\vspace{30mm}
+		Submitted for the degree of\\
+		Bachelor of Engineering (Pass/Honours)
+		\smallskip\\
+\normalsize
+		in the division of \ldots
+		\medskip\\
+\large
+		MONTH \& YEAR.		
+\end{center}
+\end{titlepage}
+
+\cleardoublepage
+
+\begin{flushright}
+	ADDRESS LINE 1\\
+	ADDRESS LINE 2\\
+	Tel.\ (07) nnnn nnnn\\
+	\medskip
+	\today
+\end{flushright}
+\begin{flushleft}
+  The Dean\\
+  School of Engineering\\
+  University of Queensland\\
+  St Lucia, Q 4072\\
+  \bigskip\bigskip
+  Dear Professor Simmons,
+\end{flushleft}
+
+In accordance with the requirements of the degree of Bachelor of
+Engineering (Pass/Honours) in the division of Computer Systems
+Engineering / Electrical and Electronic Engineering, I present the
+following thesis entitled ``\ldots''.  This work was performed [in
+partnership with Mr/Ms \ldots\ and] under the supervision of
+Mr/Ms/Dr/A/Prof./Prof.~\ldots.
+
+I declare that the work submitted in this thesis is my own, except as
+acknowledged in the text and footnotes, and has not been previously
+submitted for a degree at the University of Queensland or any other
+institution.
+
+\begin{flushright}
+	Yours sincerely,\\
+	\medskip
+	\emph{Author's Signature}\\
+	\medskip
+	AUTHOR'S NAME.
+\end{flushright}
+
+\cleardoublepage
+
+% Dedication (if you want it):
+\vspace*{70mm}
+\begin{center}
+\renewcommand{\baselinestretch}{1.0}
+\sl
+	To \ldots
+\end{center}
+
+\chapter{Acknowledgments}
+
+Acknowledge your supervisor, preferably with a few short and specific
+statements about his/her contribution to the content and direction of
+the project.  If you collaborated with another student, acknowledge
+your partner's contribution, including any parts of the thesis of
+which s/he was the principal author or co-author; this information can
+be duplicated in footnotes to the chapters or sections to which your
+partner has contributed.  Briefly describe any assistance that you
+received from technical or administrative staff.  Support of family
+and friends may also be acknowledged, but avoid sentimentality---or
+hide it in the dedication.
+
+\cleardoublepage
+
+\chapter{Abstract}
+
+% Notice that all \include files are chapters -- a logical division.
+% But not all chapters are \include files; some chapters are short
+% enough to be in-lined in the main file.
+
+This document is a skeleton thesis for 4th-year students.  The
+printable versions (\texttt{skel.dvi, skel.ps, skel.pdf})
+show the structure of a typical thesis with some notes on the content
+and purpose of each part.  The notes are meant to be informative but
+not necessarily illustrative; for example, this paragraph is not
+really an abstract, because it contains information not found
+elsewhere in the document.  The \LaTeXe\ source file
+(\texttt{skel.tex}) contains some non-printing comments giving
+additional information for students who wish to typeset their theses
+in \LaTeX.  You can download the source, edit out the unwanted
+material, insert your own frontmatter and bibliographic entries, and
+in-line or \verb+\include{}+ your own chapter files.  Of course the
+content of a particular thesis will influence the form to a large
+extent.  Hence this document should not be seen as an attempt to force
+every thesis into the same mold.  If in doubt about the structure of
+your thesis, seek advice from your supervisor.
+
+\tableofcontents
+
+\listoffigures
+\addcontentsline{toc}{chapter}{List of Figures}
+
+\listoftables
+\addcontentsline{toc}{chapter}{List of Tables}
+
+% If file los.tex begins with ``\chapter{List of Symbols}'':
+% \include{los}
+
+\cleardoublepage
+
+\mainmatter
+% By default, mainmatter has Arabic page-numbering (1,2,...).
+
+
+% Chapters may be \include files, each beginning with a line like
+%
+%	\chapter{Title of chapter}
+%
+% e.g. if two chapter files were called intro.tex and theory.tex,
+% we would say
+%
+%	\include{intro}
+%	\include{theory}
+
+\chapter{Introduction}
+
+The introductory chapter describes the importance of the field and the
+scope and significance of your project.  It usually ends with an
+overview of the remainder of the thesis.
+
+Notice that Arabic page numbering begins with Chapter 1.  Preceding
+pages (known as ``frontmatter'') have Roman numbering.  The
+\texttt{book} document class in \LaTeX\ follows this numbering
+convention by default (see Lamport~\cite{lamport}, p.\,80).
+
+\chapter{Literature review / prior art}
+
+You will need to review previous work in the field, which may include
+books and papers (``literature''), patents and commercial products
+(``prior art''), and earlier work in your Department.  This
+information is usually (but not always) collected in a single chapter,
+whose title should preferably be more specific and interesting than
+the one above.
+
+\chapter{Theory}
+
+A scientific paper is likely to be read by people who are not
+specialists in the same field as the author(s), but who nevertheless
+may need to use the results of the paper in their own fields.
+Similarly, the examiners of your thesis will probably include at least
+one academic who does not teach or conduct research in the subject
+area of your thesis.  In an early chapter of your thesis, therefore,
+you should quote any theoretical results which are necessary for the
+understanding of later chapters.  Examiners who are not specialists in
+your area will know whether you have given sufficient theoretical
+information.  They will also know whether you have insulted their
+status by presenting material which is familiar to every
+half-competent graduate in every field of ECE.
+
+\chapter{Methodology, procedure, design, etc.}
+
+This may be one chapter or several.  Again, titles should be more
+informative than the above.
+
+You will almost certainly need diagrams to clarify your meaning.  The
+\LaTeXe\ \texttt{graphics} package allows the inclusion of PostScript
+graphics, as in \fig{flr1}.  The inclusion of \LaTeX\ \texttt{picture}
+graphics, as in \fig{fzsys}, requires no auxiliary packages and allows
+the mathematical formatting features of \LaTeX\ to be used in
+diagrams; but the \texttt{picture} files, unlike PostScript files,
+usually require manual editing.
+
+\begin{figure}[htbp]
+\centerline{\includegraphics{flr1.eps}}
+\caption{Experimental two-way active crossover (op-amp version)}
+\label{flr1}
+\end{figure}
+
+\begin{figure}[htbp]
+\input{fzsys.latex}
+\caption{Modeling a discrete-time LTI system using $z$-transforms}
+\label{fzsys}
+\end{figure}
+
+\chapter{Results and discussion \ldots}
+
+\ldots\ or perhaps the discussion should be a separate chapter.
+
+In any case, you will probably need to include tabulated results.
+\tab{tf2} illustrates the use of various \LaTeX\ environments to
+include a computer printout (plain text file) in a document.  The
+\texttt{verbatim} environment, which encloses the formatted text, is
+also useful for program listings.
+
+\begin{table}\renewcommand{\baselinestretch}{1.0}
+\caption{\sl Fraction of air volume involved in heat exchange for
+second mode (right column) vs.\ filling factor (left column).  The
+plain-text headings represent $f$, $m$, $\mu_2$ and $f_2$.}
+\label{tf2}
+
+\begin{center}
+\begin{minipage}[c]{2.85in}\small\normalsize
+\begin{verbatim}
+
+ f(%)     m         mu2     f2(%)
+
+ 0.016   80.00    0.05400   4.874
+ 0.031   56.57    0.07732   5.438
+ 0.062   40.00    0.11103   6.125
+ 0.125   28.28    0.16001   6.970
+ 0.250   20.00    0.23175   8.020
+ 0.500   14.14    0.33799   9.329
+ 1.000   10.00    0.49789  10.967
+ 2.000    7.07    0.74444  13.008
+ 4.000    5.00    1.13919  15.525
+ 8.000    3.54    1.81095  18.568
+
+19.237    2.28    3.61958  23.174
+37.180    1.64    7.28635  27.094
+57.392    1.32   14.63631  29.813
+74.316    1.16   29.35160  31.453
+85.734    1.08   58.79364  32.360
+\end{verbatim}
+\end{minipage}
+\end{center}
+\end{table}
+
+\chapter{Conclusions}
+
+\section{Summary and conclusions}
+
+\section{Possible future work}
+
+\appendix
+
+% Chapters after the \appendix command are lettered, not numbered.
+% Setting apart the appendices in the table of contents is awkward:
+
+\newpage
+\addcontentsline{toc}{part}{Appendices}
+\mbox{}
+\newpage
+
+% The \mbox{} command between two \newpage commands gives a blank page.
+% In the contents, the ``Appendices'' heading is shown as being on this
+% blank page, which is the page before the first appendix.  This stops the
+% first appendix from be listed ABOVE the word ``Appendices'' in the
+% table of contents.
+
+% \include appendix chapters here.
+
+\chapter{Dummy appendix}
+
+Appendices are useful for supplying necessary details or explanations
+which do not seem to fit into the main text, perhaps because they are
+too long and would distract the reader from the central argument.
+Appendices are also used for program listings.
+
+Notice that appendices are ``numbered'' with capital letters, not
+numerals.  When the \verb+\appendix+ command in
+\LaTeX~\cite[p.\,175]{lamport} is used with the \texttt{book} document
+class, it causes subsequent chapters to be treated as appendices.
+
+\chapter{Program listings}
+
+\section{First program}
+
+Some initial explanatory notes may precede the listing.
+
+\section{Second program}
+
+\section{Etc.}
+
+\chapter{Companion disk}
+
+If you wish to make some computer files available to your examiners,
+you can list and describe the files here.  The files can be supplied
+on a disk and inserted in a pocket fixed to the inside back cover.
+
+The disk will not be needed if you can specify a URL from which the
+files can be downloaded.
+
+\cleardoublepage
+
+\begin{thebibliography}{99}
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibitem{lamport} L.~Lamport, \emph{\LaTeX: A Document Preparation
+System}, 2nd ed. (Addison-Wesley, 1994).
+\bibitem{LABEL2} REFERENCE 2
+\bibitem{ETC.} Etc.
+\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,20 @@
+IEEE Aerospace & Electronic Systems Magazine special issue on passive radar
+As promised, here’s the info on the special issue.  It was in the publication named in the subject line, vol. 27, no. 10, October 2012.  The URL is
+http://ieeexplore.ieee.org/xpl/tocresult.jsp?isnumber=6373899
+
+Hi Lewis
+
+I’m sorry I didn’t reply to this sooner.  Somehow I’d marked this as read and then promptly forgot about it.
+
+I thought also a little longer about why you are seeing hyperbolas rather than ellipses.  The answer should have been obvious to me at once, and perhaps Konstanty has explained in the meantime.  It’s because, in that original SSP paper, we’re talking about the so-called ‘over-the-shoulder’ configuration (a better name would be ‘direct-path’) where one of the signals is obtained from the direct path, but is still noisy, and the other from a reflection off the target.  Now the time-difference is proportional to the sum of the distances between Tx and target and target and Rx.  The locus in which the time-difference is constant/correct is an ellipse.
+
+If there were no direct-path component, then indeed you would have hyperbolae instead.
+
+In terms of your questions below:
+The proposal should be in a single-column format, maybe even 1.5 spaced, 10–15 pages total (but see the Course Profile, Blackboard site & thesis website for further details).
+As discussed in our meeting just now, I’d like to see a bit of depth and a bit of breadth.  So talk about the 3–5 papers in some depth, but cover some more basic (passive) radar papers/books too by way of introduction to give breadth.
+Yes, you’ve got the right idea about the project.  Attached is a presentation I gave at Wright-Patterson Air Force Base last year with a new idea I had for passive radar detection (see ’Stop Press/Overnight Idea’ at the end).  This might be one thing you could try.  Another is how to covert individual range-Doppler maps into PPI maps efficiently.
+The OH&S discussion can be very brief.  We do require that every student take the time to think about possible risks to health & safety but, realistically, for many projects (like this one) the risks are minimal and it doesn’t warrant very many words.
+
+Cheers
+- Vaughan

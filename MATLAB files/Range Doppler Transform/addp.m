@@ -1,0 +1,2 @@
+% addp
+addpath(genpath(pwd));

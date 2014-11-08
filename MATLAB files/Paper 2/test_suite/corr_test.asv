@@ -1,0 +1,10 @@
+a = randn(20,1);
+
+[c, shifts] = xcorr(a);
+plot(shifts,c);
+
+hold on
+
+d = zeros(20,1
+for i=1:numel(a)
+    
