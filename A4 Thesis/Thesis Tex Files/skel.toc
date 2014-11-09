@@ -13,8 +13,8 @@
 \contentsline {subsection}{\numberline {3.2.1}Time and frequency estimation}{11}
 \contentsline {subsection}{\numberline {3.2.2}Range-Doppler Maps}{13}
 \contentsline {subsection}{\numberline {3.2.3}Radar Cross Section and Radar equation}{16}
-\contentsline {subsection}{\numberline {3.2.4}Doppler Shift}{17}
-\contentsline {subsection}{\numberline {3.2.5}Signal to Noise Ratio}{18}
+\contentsline {subsection}{\numberline {3.2.4}Doppler Shift}{18}
+\contentsline {subsection}{\numberline {3.2.5}Signal to Noise Ratio}{19}
 \contentsline {chapter}{\numberline {4}Implementation of prior works}{21}
 \contentsline {section}{\numberline {4.1}Simulating Signals}{21}
 \contentsline {subsection}{\numberline {4.1.1}Generating Signals}{21}
@@ -30,29 +30,30 @@
 \contentsline {chapter}{\numberline {5}Design}{31}
 \contentsline {section}{\numberline {5.1}Motivation}{31}
 \contentsline {section}{\numberline {5.2}The Range-Doppler Transformation}{31}
-\contentsline {subsection}{\numberline {5.2.1}Detecting Targets in Range-Doppler domain}{32}
+\contentsline {subsection}{\numberline {5.2.1}Detecting Targets in Range-Doppler domain}{33}
 \contentsline {subsection}{\numberline {5.2.2}Generating ellipse coefficients}{33}
-\contentsline {subsection}{\numberline {5.2.3}Intersecting Ellipses}{33}
-\contentsline {subsection}{\numberline {5.2.4}Voting and Consensus}{33}
-\contentsline {subsection}{\numberline {5.2.5}Time complexity}{33}
-\contentsline {chapter}{\numberline {6}Conclusions}{36}
-\contentsline {section}{\numberline {6.1}Summary and conclusions}{36}
-\contentsline {section}{\numberline {6.2}Possible future work}{36}
-\contentsline {part}{Appendices}{37}
-\contentsline {chapter}{\numberline {A}Program listings}{38}
-\contentsline {section}{\numberline {A.1}Generalised Canonical Correlation Analysis}{38}
-\contentsline {subsection}{\numberline {A.1.1}Signal Generation}{38}
-\contentsline {subsection}{\numberline {A.1.2}Target Detection}{41}
-\contentsline {subsection}{\numberline {A.1.3}Extract Targets}{44}
-\contentsline {subsection}{\numberline {A.1.4}Analysis}{45}
-\contentsline {section}{\numberline {A.2}Range-Doppler Transformation}{47}
-\contentsline {subsection}{\numberline {A.2.1}Signal Generation}{47}
-\contentsline {subsection}{\numberline {A.2.2}Range Doppler Map}{51}
-\contentsline {subsection}{\numberline {A.2.3}Generate Receiver Array}{53}
-\contentsline {subsection}{\numberline {A.2.4}Target Detection}{54}
-\contentsline {subsection}{\numberline {A.2.5}Determine Ellipse Parameters}{55}
-\contentsline {subsection}{\numberline {A.2.6}Ellipse Intersections}{56}
-\contentsline {subsection}{\numberline {A.2.7}Vote and Consensus}{58}
-\contentsline {subsection}{\numberline {A.2.8}Test Multiple Receivers}{61}
-\contentsline {chapter}{\numberline {B}Companion disk}{64}
-\contentsline {chapter}{Bibliography}{65}
+\contentsline {subsection}{\numberline {5.2.3}Intersecting Ellipses}{36}
+\contentsline {subsection}{\numberline {5.2.4}Voting and Consensus}{37}
+\contentsline {subsection}{\numberline {5.2.5}Time complexity}{39}
+\contentsline {chapter}{\numberline {6}Results and Conclusions}{43}
+\contentsline {section}{\numberline {6.1}Results}{43}
+\contentsline {section}{\numberline {6.2}Conclusions}{46}
+\contentsline {chapter}{\numberline {7}Future Directions}{49}
+\contentsline {part}{Appendices}{51}
+\contentsline {chapter}{\numberline {A}Program listings}{52}
+\contentsline {section}{\numberline {A.1}Generalised Canonical Correlation Analysis}{52}
+\contentsline {subsection}{\numberline {A.1.1}Signal Generation}{52}
+\contentsline {subsection}{\numberline {A.1.2}Target Detection}{55}
+\contentsline {subsection}{\numberline {A.1.3}Extract Targets}{58}
+\contentsline {subsection}{\numberline {A.1.4}Analysis}{59}
+\contentsline {section}{\numberline {A.2}Range-Doppler Transformation}{61}
+\contentsline {subsection}{\numberline {A.2.1}Signal Generation}{61}
+\contentsline {subsection}{\numberline {A.2.2}Range Doppler Map}{65}
+\contentsline {subsection}{\numberline {A.2.3}Generate Receiver Array}{67}
+\contentsline {subsection}{\numberline {A.2.4}Target Detection}{68}
+\contentsline {subsection}{\numberline {A.2.5}Determine Ellipse Parameters}{69}
+\contentsline {subsection}{\numberline {A.2.6}Ellipse Intersections}{70}
+\contentsline {subsection}{\numberline {A.2.7}Vote and Consensus}{72}
+\contentsline {subsection}{\numberline {A.2.8}Test Multiple Receivers}{75}
+\contentsline {chapter}{\numberline {B}Companion disk}{78}
+\contentsline {chapter}{Bibliography}{81}

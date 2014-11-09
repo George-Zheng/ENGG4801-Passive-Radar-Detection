@@ -6,6 +6,7 @@
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \citation{pic1}
+\citation{ellPic}
 \@writefile{toc}{\contentsline {chapter}{List of Figures}{x}}
 \citation{Willis1}
 \citation{HK2}
@@ -35,16 +36,17 @@
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{toc}{\contentsline {section}{\numberline {3.1}Related Work}{7}}
 \citation{gcc}
-\citation{SS15}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}Problem Set-up}{8}}
 \newlabel{eqn:approx}{{3.1}{8}}
 \newlabel{eqn:update}{{3.2}{8}}
+\newlabel{eqn:update2}{{3.3}{8}}
+\citation{SS15}
 \citation{DE16}
 \citation{SFN}
 \citation{gcc}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}Generalised Canonical Correlation Analysis}{9}}
-\newlabel{eqn:const}{{3.14}{10}}
 \citation{RHB}
+\newlabel{eqn:const}{{3.14}{11}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.2}Theory}{11}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Time and frequency estimation}{11}}
 \newlabel{sec:TFE}{{3.2.1}{11}}
@@ -60,12 +62,15 @@
 \newlabel{eqn:rcs1}{{3.34}{16}}
 \newlabel{gain1}{{3.37}{16}}
 \newlabel{eqn:rcs2}{{3.38}{17}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.4}Doppler Shift}{17}}
-\newlabel{sec:doppler}{{3.2.4}{17}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.5}Signal to Noise Ratio}{18}}
-\newlabel{sec:snr}{{3.2.5}{18}}
+\newlabel{eqn:add}{{3.42}{17}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.4}Doppler Shift}{18}}
+\newlabel{sec:doppler}{{3.2.4}{18}}
 \citation{SNR}
 \citation{thermal}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.5}Signal to Noise Ratio}{19}}
+\newlabel{sec:snr}{{3.2.5}{19}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Range-Doppler Map with 4 targets}}{20}}
+\newlabel{fig:rdm1}{{3.1}{20}}
 \@writefile{toc}{\contentsline {chapter}{\numberline {4}Implementation of prior works}{21}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
@@ -96,44 +101,71 @@
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{toc}{\contentsline {section}{\numberline {5.1}Motivation}{31}}
 \@writefile{toc}{\contentsline {section}{\numberline {5.2}The Range-Doppler Transformation}{31}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Detecting Targets in Range-Doppler domain}{32}}
-\newlabel{sec:detectT}{{5.2.1}{32}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Detecting Targets in Range-Doppler domain}{33}}
+\newlabel{sec:detectT}{{5.2.1}{33}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}Generating ellipse coefficients}{33}}
 \newlabel{sec:ell1}{{5.2.2}{33}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.3}Intersecting Ellipses}{33}}
-\newlabel{sec:ell2}{{5.2.3}{33}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.4}Voting and Consensus}{33}}
-\newlabel{sec:Vote}{{5.2.4}{33}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.5}Time complexity}{33}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Range-Doppler Map with 4 targets}}{35}}
-\newlabel{fig:rdm1}{{5.1}{35}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Conclusions}{36}}
+\newlabel{eqn:ellrot}{{5.10}{35}}
+\newlabel{eqn:biv}{{5.13}{35}}
+\citation{proj}
+\citation{intell2,intell3}
+\citation{intell3}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.3}Intersecting Ellipses}{36}}
+\newlabel{sec:ell2}{{5.2.3}{36}}
+\newlabel{eqn:bez}{{5.24}{37}}
+\newlabel{eq16}{{5.25}{37}}
+\newlabel{eq17}{{5.26}{37}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.4}Voting and Consensus}{37}}
+\newlabel{sec:Vote}{{5.2.4}{37}}
+\citation{vote1,vote2,vote3}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.5}Time complexity}{39}}
+\citation{ellPic}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Target detection characteristics in the Range-Doppler domain}}{41}}
+\newlabel{fig:detect}{{5.1}{41}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Ellipse and some mathematical properties \cite  {ellPic}}}{41}}
+\newlabel{fig:ell1}{{5.2}{41}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Results and Conclusions}{43}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}Summary and conclusions}{36}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.2}Possible future work}{36}}
-\@writefile{toc}{\contentsline {part}{Appendices}{37}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {A}Program listings}{38}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Results}{43}}
+\newlabel{sec:res}{{6.1}{43}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Collection of Range-Doppler maps for receiver array with two simulated targets}}{44}}
+\newlabel{fig:rdbig}{{6.1}{44}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Conclusions}{46}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Spatial domain plot of all receivers, transmitters, and Range-Doppler map transformed ellipses}}{47}}
+\newlabel{fig:xyell}{{6.2}{47}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces Output of the Range-Doppler Transform Algorithm}}{47}}
+\newlabel{fig:rdout}{{6.3}{47}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}Future Directions}{49}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {A.1}Generalised Canonical Correlation Analysis}{38}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.1.1}Signal Generation}{38}}
-\newlabel{app:siggen1}{{A.1.1}{38}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.1.2}Target Detection}{41}}
-\newlabel{app:gcca}{{A.1.2}{41}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.1.3}Extract Targets}{44}}
-\newlabel{IP}{{A.1.3}{44}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.1.4}Analysis}{45}}
-\@writefile{toc}{\contentsline {section}{\numberline {A.2}Range-Doppler Transformation}{47}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.2.1}Signal Generation}{47}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.2.2}Range Doppler Map}{51}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.2.3}Generate Receiver Array}{53}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.2.4}Target Detection}{54}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.2.5}Determine Ellipse Parameters}{55}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.2.6}Ellipse Intersections}{56}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.2.7}Vote and Consensus}{58}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.2.8}Test Multiple Receivers}{61}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {B}Companion disk}{64}}
+\@writefile{toc}{\contentsline {part}{Appendices}{51}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}Program listings}{52}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {section}{\numberline {A.1}Generalised Canonical Correlation Analysis}{52}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.1.1}Signal Generation}{52}}
+\newlabel{app:siggen1}{{A.1.1}{52}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.1.2}Target Detection}{55}}
+\newlabel{app:gcca}{{A.1.2}{55}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.1.3}Extract Targets}{58}}
+\newlabel{IP}{{A.1.3}{58}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.1.4}Analysis}{59}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.2}Range-Doppler Transformation}{61}}
+\newlabel{app:rdt}{{A.2}{61}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.2.1}Signal Generation}{61}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.2.2}Range Doppler Map}{65}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.2.3}Generate Receiver Array}{67}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.2.4}Target Detection}{68}}
+\newlabel{app:tdetect}{{A.2.4}{68}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.2.5}Determine Ellipse Parameters}{69}}
+\newlabel{app:ellParam}{{A.2.5}{69}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.2.6}Ellipse Intersections}{70}}
+\newlabel{app:ellInt}{{A.2.6}{70}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.2.7}Vote and Consensus}{72}}
+\newlabel{app:vote}{{A.2.7}{72}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.2.8}Test Multiple Receivers}{75}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {B}Companion disk}{78}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \bibcite{Willis1}{1}
@@ -148,7 +180,7 @@
 \bibcite{HD9}{10}
 \bibcite{gcc}{11}
 \bibcite{MB11}{12}
-\@writefile{toc}{\contentsline {chapter}{Bibliography}{65}}
+\@writefile{toc}{\contentsline {chapter}{Bibliography}{81}}
 \bibcite{MC12}{13}
 \bibcite{MK13}{14}
 \bibcite{GC14}{15}
@@ -164,3 +196,10 @@
 \bibcite{lowCost}{25}
 \bibcite{SNR}{26}
 \bibcite{thermal}{27}
+\bibcite{ellPic}{28}
+\bibcite{proj}{29}
+\bibcite{intell2}{30}
+\bibcite{intell3}{31}
+\bibcite{vote1}{32}
+\bibcite{vote2}{33}
+\bibcite{vote3}{34}

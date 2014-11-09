@@ -4,11 +4,17 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces German Passive Technology, the Klein Heidelberg, 1943 \cite {pic1}}}{4}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Range-Doppler Map with 4 targets}}{20}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces PPI indicator map for scenario detailed in section\nobreakspace {}4.2\hbox {}}}{27}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces PPI indicator map for scenario detailed in section\nobreakspace {}4.2\hbox {}, with target detection applied}}{28}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Range-Doppler Map with 4 targets}}{35}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Target detection characteristics in the Range-Doppler domain}}{41}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Ellipse and some mathematical properties \cite {ellPic}}}{41}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Collection of Range-Doppler maps for receiver array with two simulated targets}}{44}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Spatial domain plot of all receivers, transmitters, and Range-Doppler map transformed ellipses}}{47}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Output of the Range-Doppler Transform Algorithm}}{47}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

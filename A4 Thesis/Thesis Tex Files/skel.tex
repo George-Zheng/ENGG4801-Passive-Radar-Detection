@@ -249,7 +249,7 @@ systems throughout the last semester.
 
 \bigskip
 
-I would finally like to acknowledge the support of my family and friends for supporting me through the year and pushing me to keep working.
+I would finally like to acknowledge the support of my family and friends for helping me through the year and pushing me to keep working.
 
 \cleardoublepage
 
@@ -259,22 +259,7 @@ I would finally like to acknowledge the support of my family and friends for sup
 % But not all chapters are \include files; some chapters are short
 % enough to be in-lined in the main file.
 
-This document is a skeleton thesis for 4th-year students.  The
-printable versions (\texttt{skel.dvi, skel.ps, skel.pdf})
-show the structure of a typical thesis with some notes on the content
-and purpose of each part.  The notes are meant to be informative but
-not necessarily illustrative; for example, this paragraph is not
-really an abstract, because it contains information not found
-elsewhere in the document.  The \LaTeXe\ source file
-(\texttt{skel.tex}) contains some non-printing comments giving
-additional information for students who wish to typeset their theses
-in \LaTeX.  You can download the source, edit out the unwanted
-material, insert your own frontmatter and bibliographic entries, and
-in-line or \verb+\include{}+ your own chapter files.  Of course the
-content of a particular thesis will influence the form to a large
-extent.  Hence this document should not be seen as an attempt to force
-every thesis into the same mold.  If in doubt about the structure of
-your thesis, seek advice from your supervisor.
+This thesis examines the problem of target detection in passive multi-static radar. A review of the theory and history of passive radar is presented. Analysis of the state of the art is offered, and some existing detection algorithms are implemented, along with discussion about specific implementation details. A novel new approach, Range-Doppler transformations, is proposed. This approach relies on a large number of radar receivers, and processing targets in the Range-Doppler domain. These targets are then transformed into the spatial domain, resulting in a number of ellipses that are intersected to determine the location of targets. This algorithm is accurate, robust to synchronisation errors, and has better time complexity than current methods.
 
 \tableofcontents
 
@@ -314,15 +299,15 @@ Passive radar (or passive coherent location) detection is the problem of locatin
 
 \bigskip
 
-With the advent of digital television broadcast, this technique of passive radar detection has become more viable as there are many high strength, high frequency signals being broadcast in most areas. Other examples of illuminators of opportunity include cellular phone base stations, navigations satellites and air surveillance radars \cite{Willis1}. Many of these transmissions are at VHF and UHF, which is optimal for radar detection. Another factor contributing to the recent feasibility of Multistatic passive radar is the requirement of suitable digital signal processing technologies, as there is large amount of data to be processed and it is a computationally significant load. 
+With the advent of digital television broadcast, this technique of passive radar detection has become more viable as there are many high strength, high frequency signals being broadcast in most areas. Other examples of illuminators of opportunity include cellular phone base stations, navigations satellites and air surveillance radars \cite{Willis1}. Many of these transmissions are at VHF and UHF, which is optimal for radar detection. Another factor contributing to the recent feasibility of multi-static passive radar, is the requirement of suitable digital signal processing technologies, as there is large amount of data to be processed and it is a computationally significant load. 
 
 \bigskip
 
-Passive radar has a number of advantages over active radar. Firstly, a passive radar system consists of only receivers, so the initial cost of implementation is lower as transmitters are not required. Secondly, many implementations of passive radar schemes require only static or non-directional receivers, so receivers need not be prohibitively expensive. Thirdly, as mentioned above, many illuminators are at VHF and UHF frequencies, where stealth treatment of targets may be less effective \cite{HK2}. Finally, and most importantly, passive radar allows the covert surveillance of an area, as it is undetectable due to the absence of a transmitter. This means that passive radar could have a variety of applications in military where a low-cost, covert, radar system is required.
+Passive radar has a number of advantages over active radar. Firstly, a passive radar system consists of only receivers, so the initial cost of implementation is lower as transmitters are not required. Secondly, many implementations of passive radar schemes require only static or non-directional receivers, so receivers need not be prohibitively expensive. Thirdly, as mentioned above, many illuminators are at VHF and UHF frequencies, where stealth treatment of targets may be less effective \cite{HK2}. Finally, and most importantly, passive radar allows the covert surveillance of an area, as it is undetectable due to the absence of a transmitter. This means that passive radar could have a variety of applications in military settings, where low-cost, covert, radar systems are required.
 
 \bigskip
 
-Passive radar has a long history and many practical applications for the future in both military and civilian scenarios. Many factors coming together including the rise of suitable signal processing technologies and proliferation of wide band high signal strength commercial transmissions. It has been shown that passive radar is a strong candidate for a radar technology because of its covert nature and stealth-finding abilities. 
+Passive radar has a long history and many practical applications for the future in both military and civilian scenarios. Many factors coming together including the rise of suitable signal processing technologies and proliferation of wide band high signal strength commercial transmissions have led passive radar towards the forefront of the radar community. It has been shown that passive radar is a strong candidate for a radar technology because of its covert nature and stealth-finding abilities. 
 
 
 \section{Thesis definition and scope}
@@ -341,7 +326,7 @@ The earliest radar systems were bistatic, that means that the transmitter and re
 
 \bigskip
 
-The earliest passive radar systems can be found as far back as 1935, with Sir Robert Watson-Watt detecting a Heyford bomber aircraft 8km away using the illumination signal from the shortwave BBC empire transmitter \cite{HK5, HK6}. The interest in passive radar continued on the German side from 1943, with the ‘Klein Heidelberg’ receivers used to detect British incoming aircraft, as seen in figure~\ref{KH}. Interest continued to grow in the following years and many projects followed, including Lockheed Martin’s ‘Silent Sentry,’ an all-weather passive surveillance technology \cite{LHM}. The passive system uses transmissions from multiple commercial FM radio stations to detect airborne targets in real-time. Around this time the awareness and interest in this technology started growing rapidly, and for good reason.
+The earliest passive radar systems can be found as far back as 1935, with Sir Robert Watson-Watt detecting a Heyford bomber aircraft 8km away using the illumination signal from the shortwave BBC empire transmitter \cite{HK5, HK6}. The interest in passive radar continued on the German side from 1943, with the ‘Klein Heidelberg’ receivers used to detect British incoming aircraft, as seen in figure~\ref{KH}. Interest continued to grow in the following years and many projects followed, including Lockheed Martin’s ‘Silent Sentry,’ an all-weather passive surveillance technology \cite{LHM}. This passive system uses transmissions from multiple commercial FM radio stations to detect airborne targets in real-time. Around this time the awareness and interest in this technology started growing rapidly, and for good reason.
 
 \bigskip
 
@@ -361,7 +346,7 @@ As well as these factors, passive radar systems have many advantages over active
 
 \bigskip
 
-It has been shown that the predicted detection ranges for a variety of illuminators of opportunity, including analogue FM radio, cellular phone base stations and digital audio broadcast (DAB) is in the order of 'several tens of kilometres' \cite{HD9}. The signals of interest in latest works on the topic have been focused on DVB-T (Digital Video Broadcasting - Terrestrial) signals \cite{gcc,MB11,MC12,MK13}, with a higher transmitter gain and signal power, although the exact medium of the illuminating signal does not have a direct effect on the method of resolving target position and velocity.
+It has been shown that the predicted detection ranges for a variety of illuminators of opportunity, including analogue FM radio, cellular phone base stations and digital audio broadcast (DAB) is in the order of 'several tens of kilometres' \cite{HD9}. The signals of interest in latest works on the topic have been focused on DVB-T (Digital Video Broadcasting - Terrestrial) signals \cite{gcc,MB11,MC12,MK13}. These signals have a higher transmitter gain and signal power, although the exact medium of the illuminating signal does not have a direct effect on the method of resolving target position and velocity.
 
 \cleardoublepage
 
@@ -402,21 +387,28 @@ where $\mu$ is the signal amplitude, $\tau$ is the time delay, $\omega$ is the f
 \begin{eqnarray}
 \label{eqn:update}
 \bar{x}(t) & = & x(t+\tau) e^{-j\omega t} = \bar{\mu} s(t) + \xi(t) \\
+\label{eqn:update2}
 \bar{x}[n] & = & \bar{\mu}s[n] + \xi[n]
 \end{eqnarray}
 
 \bigskip
 
-The signal $\bar{x}[n]$ is the signal of interest that analysis will be performed on. In practice, we do not know ahead of time what the correcting factors $\tau$ or $\omega$ will be, so we must generate the signals $\bar{x}[n]$ for analysis for each possible time and frequency delay in a multi-dimensional grid. This is discussed further in \ref{sec:TFE}, Time and Frequency Estimation.
+where $\xi$ represents the time and frequency adjusted noise. The signal $\bar{x}[n]$ is the signal of interest that analysis will be performed on. In practice, we do not know ahead of time what the correcting factors $\tau$ or $\omega$ will be, so we must generate the signals $\bar{x}[n]$ for analysis for each possible time and frequency delay in a multi-dimensional grid. This is discussed further in section~\ref{sec:TFE}.
 
-It is also important to note that if the noise introduced is additive, white, Gaussian noise, that is not dependent on the signal $s(t)$,  equation \ref{eqn:update} is 
+\bigskip
 
-We now need to manipulate these signals to perform some detection analysis, by finding the likelihood that any of the scenarios is true. This is done by comparing two hypotheses,
+It is also important to note that if the noise introduced is additive, white, Gaussian noise, that is not dependent on the signal $s(t)$,  equation~\ref{eqn:update2} is correct whether the time and frequency correction occurs before or after the sampling occurs. 
+
+\bigskip
+
+We now need to manipulate these signals to perform some detection analysis, by finding the likelihood that either of the the following two hypotheses are true. This is done by comparing these two hypotheses,
 
 \begin{itemize}
 \item{the null hypothesis, where the received signals are simply given by random white gaussian noise}
-\item{the alternative hypothesis, where the received signals are correlated}
+\item{the alternative hypothesis, where the received signals are correlated due to the signal containing a reflected signal from a target}
 \end{itemize}
+
+\bigskip
 
 These are compared by a metric known as the generalised likelihood ratio test (GLRT). This is the real distinguishing factor between methods, and there are a number of approaches of interest to this project, including:
 
@@ -424,10 +416,12 @@ These are compared by a metric known as the generalised likelihood ratio test (G
 \item{Generalised Canonical Correlation analysis (GCCA) for a single transmitter \cite{gcc}}
 \item{Bayesian detection for signals of know rank with known and unknown noise variance \cite{SS15}}
 \item{Source localisation for each Rx-Rx pair and each Tx-Rx pair \cite{DE16}}
-\item{Using single frequency networks for detection \cite{SFN}}
+\item{Using single frequency network analysis for detection \cite{SFN}}
 \end{itemize}
 
-This metric is then calculated over a multi-dimensional array, spanning two spatial directions and multiple frequencies. In practice, it is usually viewed as a 2-D spatial grid for each frequency. This gives us a physical view of the likelihood of a target occurring at each position in an image known as the plan position indicator (PPI) map. Some images of PPI maps appear in the Implementation section ~\ref{gccaI}. Some methods also include post analysis on the PPI map, for a sharpened location of targets.
+\bigskip
+
+This metric is then calculated over a multi-dimensional array, spanning two spatial directions and multiple frequencies. In practice, it is usually viewed as a 2-D spatial grid for each frequency. This gives us a physical view of the likelihood of a target occurring at each position in an image known as the plan position indicator (PPI) map. Some images of PPI maps appear in the Implementation section~\ref{gccaI}. Some methods also include post analysis on the PPI map, for a sharpened location of targets.
 
 \subsection{Generalised Canonical Correlation Analysis}
 One such method for determining a GLRT is using Generalised Canonical Correlation Analysis \cite{gcc}.
@@ -435,12 +429,14 @@ This method determines the likelihood based on a method that is analogous to gen
 
 \bigskip
 
-It is easiest to first analyse the case where there exist only two receivers, and then extend the results. Consider the two receiver case, where the received signals are $x_{1}(t)$ and $x_{2}(t)$, and the transmitter broadcasts a signal $s(t)$. Then, as above in equation \ref{eqn:approx}, we know that the received signals are time and frequency shifted.
+It is easiest to first analyse the case where there exists only two receivers, and then extend the results. Consider the two receiver case, where the received signals are $x_{1}(t)$ and $x_{2}(t)$, and the transmitter broadcasts a signal $s(t)$. Then, as above in equation \ref{eqn:approx}, we know that the received signals are time and frequency shifted.
 
 \begin{eqnarray}
 x_1(t) & \approx & \mu_1 s(t-\tau_1) e^{j\omega_1 t} + n_1(t) \\
 x_2(t) & \approx & \mu_2 s(t-\tau_2) e^{j\omega_2 t} + n_2(t)
 \end{eqnarray}
+
+\bigskip
 
 Here we know that the scalars $\mu_i$ and $\tau_i$ are different, because the receivers are spatially separated, resulting in different time delays and isotropic signal decay. The $\omega_i$ are different for the same reason, but this will be explained further in section ~\ref{sec:doppler}.
 
@@ -453,7 +449,9 @@ Again, as in equation ~\ref{eqn:update}, we can correct for the time and frequen
 \bar{x_2}(t) & = & x(t+\tau_2) e^{-j\omega_2 t} = \bar{\mu_2} s(t) + \xi_2(t)
 \end{eqnarray}
 
-Now if we take $N$ samples from each of these $\bar{x_i}$ signals, and we know the signal variance $\sigma^2$, we can calculate the likelihood that $s(t)$ was our transmitted signal, given that we know the corrected $\bar{x_1}$ and $\bar{x_2}$. We must also consider the relative signal amplitudes, $\mu_1$ and $\mu_2$ in this calculation. This gives us the following likelihood
+\bigskip
+
+Now if we take $N$ samples from each of these $\bar{x_i}$ signals, and we know the signal noise variance $\sigma^2$, we can calculate the likelihood that $s(t)$ was our transmitted signal, given that we know the corrected $\bar{x_1}$ and $\bar{x_2}$. We must also consider the relative signal amplitudes, $\mu_1$ and $\mu_2$ in this calculation. This gives us the following likelihood
 
 \begin{equation}
 L(\mu_1,\mu_2, s | \bar{x_1}, \bar{x_2}) = \frac{1}{(2\pi\sigma^2)^N} \exp{
@@ -463,6 +461,7 @@ L(\mu_1,\mu_2, s | \bar{x_1}, \bar{x_2}) = \frac{1}{(2\pi\sigma^2)^N} \exp{
 \bigskip
 
 We now wish to maximise this likelihood. Taking the log of this does not effect the maximisation process, so we can develop the log-likelihood
+
 \begin{equation}
 l(\mu_1,\mu_2, s | \bar{x_1}, \bar{x_2}) = \log{\Bigg(\frac{1}{(2\pi\sigma^2)^N}\Bigg)}
 - \frac{\| \bar{x_1}-\mu_1 s\|^2 + \| \bar{x_2}-\mu_2 s\|^2}{2\sigma^2}.
@@ -478,7 +477,7 @@ l(\mu_1,\mu_2, s | \bar{x_1}, \bar{x_2}) = - \| \bar{x_1}-\mu_1 s\|^2 - \| \bar{
 
 \bigskip
 
-We wish to simplify this further. We can maximise $l$ further by conditioning it only on $s$, setting
+We wish to simplify this further. We can maximise $l$ further by conditioning it only on $s$, by setting
 
 \begin{eqnarray}
 \mu_1 & = & \frac{s^\dagger \bar{x_1}}{\|s\|^2} =  \frac{s^\dagger \bar{x_1}}{s^\dagger s}\\
@@ -585,7 +584,7 @@ N_i = t_i \times f_s.
 
 \bigskip
 
-So to do time estimation, we simply need to delay each of the received signals by the correct number of samples, dependent on the by the distance from the estimated target.
+So, to do time estimation, we simply need to delay each of the received signals by the correct number of samples, dependent only on the distance from the estimated target.
 
 \bigskip
 
@@ -593,7 +592,7 @@ The next element that must be considered is frequency shifting. Frequency shifti
 
 \bigskip
 
-If we wish to shift our signal by our estimated frequency, $f_x$ (note that this frequency shift can be positive or negative), we must first create a time vector that corresponds to our samples time. To do this, we simply take the sampling period
+If we wish to shift a signal by our estimated frequency, $f_x$ (note that this frequency shift can be positive or negative), we must first create a time vector that corresponds to our samples. To do this, we simply take the sampling period
 
 \begin{equation}
 T = \frac{1}{f_s},
@@ -622,7 +621,7 @@ In this domain, the range axis represents the path difference (see equation \ref
 
 \bigskip
 
-Expectantly, the Doppler axis refers to the Doppler shift that the signal experiences when it hits a moving target. Further explanation of how and why this occurs is found in section ~\ref{sec:doppler}. 
+Expectantly, the Doppler axis refers to the Doppler shift that the signal experiences when it hits a moving target. Further explanation of how and why this occurs is found in section ~\ref{sec:doppler}. An example of what a Range-Doppler map looks like appears in figure~\ref{fig:rdm1}.
 
 \bigskip
 
@@ -638,8 +637,8 @@ Here, again $\tau$ is our time shift and $f_x$ is our frequency shift. The value
 
 \bigskip
 
-The peaks in this plot will occur at the points where a target occurs.
-If we consider the case when the broadcast signal is $s(t)$, and the received signal from the direct path is $\mu_1s(t-\tau_1)$ and the signal from one of the target paths is $\mu_2s(t-\tau_2)e^{2\pi i f_x t}$. We know the correct time shift for the Range, or more correctly, path difference, is given by\footnote{Note that the actual shift is $\tau_2 - \tau_1$. However, we are accounting for, and trying to undo this shift, so we must take the negation of it, $\tau_1 - \tau_2$.} $\tau_1 - \tau_2$, and the correct frequency shift is $f_x$, then we can calculate that
+The peaks in this plot will occur at the points where a target is located.
+If we consider the case where the broadcast signal is $s(t)$, the received signal from the direct path is $\mu_1s(t-\tau_1)$, and the signal from one of the target paths is $\mu_2s(t-\tau_2)e^{2\pi i f_x t}$. We know the correct time shift for the Range, or more correctly, path difference, is given by\footnote{Note that the actual shift is $\tau_2 - \tau_1$. However, we are accounting for, and trying to undo this shift, so we must take the negation of it, $\tau_1 - \tau_2$.} $\tau_1 - \tau_2$, and the correct frequency shift is $f_x$, then we can calculate that
 
 \begin{eqnarray}
 \label{eqn:x1}
@@ -660,7 +659,7 @@ It is also worth noting that the signal $x$ and $\hat{x}$ both contain complex v
 
 \bigskip
 
-This is not the only unwanted behaviour of this method. There are also some shadows that appear in the Range-Doppler map that do not correspond with targets. These shadows are artefacts caused by the correlation of the other terms of $x$ and $\hat{x}$. This and the unwanted behaviour near the origin is due to the signal basically being correlated with itself.
+This is not the only unwanted behaviour of this method. There are also some shadows that appear in the Range-Doppler map that do not correspond with targets. These shadows are artefacts caused by the correlation of the other terms of $x$ and $\hat{x}$. This and the unwanted behaviour near the origin is due to the signal noise being correlated with itself.
 
 \bigskip
 
@@ -680,7 +679,7 @@ R_{xy}(0) = \sum_{m=-\infty}^{\infty} x[n] y^*[n-m]
 
 \bigskip
 
-When we have finite signals the bounds are smaller, but we still need to calculate all of the inner product terms. Doing this naively can be quite computationally expensive. However, there is a simpler way to do this through Fourier Transforms. The Weiner-Khintchine theorem tells us that 
+When we have finite signals, the bounds are smaller, but we still need to calculate all of the inner product terms. Doing this naively can be quite computationally expensive. However, there is a simpler way to do this through Fourier Transforms. The Weiner-Khintchine theorem tells us that 
 
 \begin{equation}
 \mathcal{F} \bigg(R_{xy}(\tau) \bigg) = G_{xy}(f)
@@ -704,7 +703,7 @@ R_{xy} = \mathcal{F}^{-1} \Bigg( \mathcal{F}(x) \bigg(\mathcal{F}(y)\bigg)^* \Bi
 
 \bigskip
 
-where $y$ is our direct path only signal, and $x$ is our frequency corrected signal. Here we can use the fast Fourier Transform (FFT) algorithm to calculate the correlations in $O (n \log n)$ time. Another bonus of doing this, is that it calculates all of the cross correlations at once, so we do not need to do any time shifting, it happens in the FFT algorithm.
+where $y$ is our direct path only signal, and $x$ is our frequency corrected signal. Here we can use the fast Fourier Transform (FFT) algorithm to calculate the correlations in $O (n \log n)$ time. Another bonus of doing this, is that it calculates all of the cross correlations at once, so we do not need to do any time shifting. This time-shifting happens automatically in the FFT algorithm.
 
 \subsection{Radar Cross Section and Radar equation}
 \label{sec:RCSeqn}
@@ -721,7 +720,7 @@ where $P_r$ and $P_t$ are the power received and transmitted respectively (measu
 
 \bigskip
 
-This equation will be relevant when calculating the scaling value $\mu$ for the direct path signal. Here we would simply substitute in the know values $P_t,G_t,G_r,A_{eff}$ and use $D_{tx\colon rx}$ as the value for $d$. Simulated values, however, use signal amplitude, rather than power. So we need to relate these two using the known relation
+This equation will be relevant when calculating the scaling value $\mu$ for the direct path signal. Here we would simply substitute in the know values for $P_t,G_t,G_r,A_{eff}$ and use $D_{tx\colon rx}$ as the value for $d$. The simulations, however, use signal amplitude, rather than power. So we need to relate these two using the known relation
 
 \begin{equation}
 A = \sqrt{2P}
@@ -758,6 +757,7 @@ Again we can move this into an equation relating to amplitude rather than power,
 A_r &=& A_t \sqrt{\frac{G_t}{4\pi d_1^2} \sigma \frac{G_r}{4\pi d_2^2}A_{eff}} \\
 A_r &=& A_t \sqrt{\frac{G_tG_r\sigma A_{eff}}{(4\pi)^2d_1^2d_2^2}} \\
 A_r &=& \frac{A_t}{d_1d_2} \sqrt{\frac{G_tG_r A_{eff}}{4\pi}} \sqrt{\frac{\sigma}{4\pi}} \\
+\label{eqn:add}
 A_r &=& \frac{A_t}{d_1d_2} G \Sigma.
 \end{eqnarray}
 
@@ -767,7 +767,7 @@ Here $G$ is the same gain constant used above in equation~\ref{gain1}, and $\Sig
 
 \bigskip
 
-The gain constant $G$, the RCS constant $\Sigma$, and the SNR (see section~\ref{sec:snr}) are the parameters used to estimate the channel that is being broadcast in. The two parameters mentioned in this section are given by
+The gain constant $G$, the RCS constant $\Sigma$, and the SNR (see section~\ref{sec:snr}) are the parameters used to estimate the channel that the signals are being broadcast in. The two parameters mentioned in this section are given by
 
 \begin{eqnarray}
 G &=& \sqrt{\frac{G_tG_r A_{eff}}{4\pi}}\\
@@ -776,7 +776,7 @@ G &=& \sqrt{\frac{G_tG_r A_{eff}}{4\pi}}\\
 
 \subsection{Doppler Shift}
 \label{sec:doppler}
-The Doppler effect is the change in frequency of a wave due to the relative velocities of the source and observer. Bistatic Doppler shift is a specific example of the Doppler effect, present in systems with spatially separated transmitter and receiver, such as in Passive Radar. It can be thought of as the rate of change of the bistatic range, $D_{tx\colon T\colon rx}$, from equation~\ref{eqn:dtxtrx}. Alternatively, it can be given by
+The Doppler effect is the change in frequency of a wave due to the relative velocities of the source and observer. Bistatic Doppler shift is a specific example of the Doppler effect, present in systems with spatially separated transmitters and receivers, such as in Passive Radar. It can be thought of as the rate of change of the bistatic range, $D_{tx\colon T\colon rx}$, from equation~\ref{eqn:dtxtrx}. Alternatively, it can be given by
 
 \begin{equation}
 f_{\textnormal{shift}} = \frac{1}{\lambda} \frac{d}{dt}\bigg( R_{tx} + R_{rx} \bigg),
@@ -816,7 +816,7 @@ f_{\textnormal{shift}} = \frac{f_0}{C} \Bigg(\frac{V\bullet(P_T - P_{tx})}{\|P_T
 
 \subsection{Signal to Noise Ratio}
 \label{sec:snr}
-The final point of interest is the signal to noise ratio (SNR). This is the ratio of signal power to noise power present in the received signal and is a measure of how clean the received signal is. It is usually measured in dB. Higher SNR means that the meaningful information in the signal is more prevalent than the random noise. The noise that occurs in receivers is random Gaussian white noise due to thermal components. The power of this noise is given by the variance of the noise, so we can generate arbitrary SNR in a known clean signal. The equations relating SNR quantities are
+The final point of interest is the signal to noise ratio (SNR). This is the ratio of signal power to noise power present in the received signal and is a measure of how clean the received signal is. It is usually measured in dB. Higher SNR means that the meaningful information in the signal is more prevalent than the random noise. The noise that occurs in receivers is random Gaussian white noise due to thermal components. The power of this noise is given by the variance of the noise, so we can generate a noisy channel with arbitrary SNR given a known, clean signal. The equations relating SNR quantities are
 
 \begin{equation}
 \textnormal{SNR} = \frac{P_{\textnormal{signal}}}{P_{\textnormal{noise}}} = \frac{\sigma_{\textnormal{signal}}^2}{\sigma_{\textnormal{noise}}^2} = \Bigg(\frac{A_{\textnormal{signal}}}{A_{\textnormal{noise}}} \Bigg)^2
@@ -824,7 +824,7 @@ The final point of interest is the signal to noise ratio (SNR). This is the rati
 
 \bigskip
 
-Note that the above formula uses the linear SNR. We will almost exclusively talk in dB, so to convert between the two, you simply need
+Note that the above formula uses the linear SNR. We will almost exclusively work in dB, so to convert between the two, you simply need
 
 \begin{equation}
 \textnormal{SNR}_{\textnormal{DB}} = 10 \log_{10}\textnormal{SNR}
@@ -834,11 +834,19 @@ Note that the above formula uses the linear SNR. We will almost exclusively talk
 
 Typical SNR values for radar receiver systems can occur anywhere between -10 and 50 dB, depending on the characteristics of the channel through which the signal is propagating\cite{SNR}. This value can be greatly affected by temperature, and is known as thermal noise \cite{thermal}.
 
+\begin{figure}[p]
+\centering
+\includegraphics{RDMAP2.png}
+\caption{Range-Doppler Map with 4 targets}
+\label{fig:rdm1}
+\end{figure}
+
+
 \cleardoublepage
 
 \chapter{Implementation of prior works}
 
-Before trying to develop a new method, it was important to first implement some of the previous methods that had been used to solve the problem. This posed a number of challenges, and was used as the code base for the rest of the thesis.
+Before trying to develop a new method, it was important to first implement some of the previous methods that had been used to solve the problem. This posed a number of challenges, and the solutions to these were used as the code base for the rest of the thesis.
 
 \section{Simulating Signals}
 The first challenge in implementing a passive detection system, is simulating the environment that the signals are being transmitted in. There are many factors that must be accounted for to create a realistic simulation.
@@ -855,7 +863,7 @@ The simulations used in this thesis take into account the following factors
 Explanation of how these are incorporated into the simulation design can be found below. The code listing for the signal generation can be found in appendix~\ref{app:siggen1}.
 
 \subsection{Generating Signals}
-When the simulation is run, it must generate a number of signals for the transmitter to transmit. In reality, these are the signals that a digital TV, or radio station would be broadcasting. Due to the nature of the transmission schemes used, these signals will be complex, with zero mean. These signals were simulated as complex, Gaussian random variables with zero mean and unitary variance. This can be done simply in MATLAB, with the command:
+When the simulation is run, it must generate a number of signals for the transmitter to broadcast. In reality, these are the signals that a digital TV, or radio station would be broadcasting. Due to the nature of the transmission schemes used, these signals will be complex, with zero mean. These signals were simulated as complex, Gaussian random variables with zero mean and unitary variance. This can be done simply in MATLAB, with the command:
 
 \begin{verbatim}
                    S = randn(Ngen,1) + 1i*randn(Ngen,1);
@@ -865,7 +873,7 @@ Where \verb+S+ is the signal the transmitter broadcasts, and \verb+Ngen+ is the 
 
 \bigskip
 
-The format of the received signals, will be an $n\times r$ matrix, $\Phi$, where $n$ is the number of samples of the received signal, and $r$ is the number of receivers. Each column of the $\Phi$ matrix corresponds to the signals received at the related receiver.
+The format of the received signals, will be an $n\times r$ matrix, $\Phi$, where $n$ is the number of samples of the received signal, and $r$ is the number of receivers. Each column of the $\Phi$ matrix corresponds to the received signals at a receiver.
 
 \subsection{Relative Positions}
 The relative positions of the transmitter, receivers, and targets is the most important factor in developing this simulation. As mentioned in the \ref{sec:TFE}, we can define the distance $D_{tx\colon rx}$ (see equation~\ref{eqn:dtxrx}) for each receiver. We can also define for each receiver-target pair, the distance $D_{tx\colon T\colon rx}$ (see equation~\ref{eqn:dtxtrx}). 
@@ -955,7 +963,7 @@ for x in xrange
 end
 \end{alltt}
 
-This is the naive implementation of the algorithm. The output once this algorithm has been implemented is a PPI map.
+This is the naive implementation of the algorithm. The output of this algorithm is a PPI map.
 
 \bigskip
 
@@ -988,19 +996,19 @@ The largest eigenvalue computation needs to be performed on a large array of pos
 
 \bigskip
 
-A method that was trialled was the power method for calculating the largest eigenvalue. This method requires a guess for the largest eigenvalue, and then converges towards it using iterative steps. When then difference between iterations falls below a threshold, the algorithm is said to have converged. This iterative method could use the previously calculated maximum eigenvalue as the initial guess for the next calculation. It was posited that this would speed up calculation of the largest eigenvalue.
+A method that was trialled in this thesis is the power method for calculating the largest eigenvalue. This method requires a guess for the largest eigenvalue, and then converges towards it using iterative steps. When then difference between iterations falls below a threshold, the algorithm is said to have converged. This iterative method could use the previously calculated maximum eigenvalue as the initial guess for the next calculation. It was posited that this would speed up calculation of the largest eigenvalue.
 
 \bigskip
 
-However, it was found that the built-in command \verb+eig()+ in MATLAB, was far superior timewise than any m-file implementation of an iterative algorithm. This was especially the case for considering small numbers of receiver, and therefore small matrices.
+However, it was found that the built-in command \verb+eig()+ in MATLAB, was far superior timewise than any m-file implementation of an iterative algorithm. This was especially the case when considering small numbers of receiver, and therefore small matrices.
 
 \subsection{Range-Doppler Usage}
-The GCCA method can also be sped up by using the Range-Doppler transformations to calculate the GLRT. This was not made clear until after the new method had been developed, so is not explored further in this thesis.
+The GCCA method can also be sped up by using the Range-Doppler transformations to calculate the GLRT. This did not become apparent until after the new method had been developed, so is not explored further in this thesis.
 
 
 \section{Time Complexity}
 \label{sec:timecomp}
-Finally, an analysis of the time complexity of this algorithm was performed. It is important to note that this is not a fully optimised version of the algorithm, but the version the author was able to implement simply.
+Finally, an analysis of the time complexity of this algorithm was performed. It is important to note that this is not a fully optimised version of the algorithm, but the version the author was able to implement.
 
 \bigskip
 
@@ -1008,7 +1016,7 @@ We can let the number of radar receivers be $r$, the maximum scanning range in b
 
 \bigskip
 
-In this inner loop, we must copy the time and frequency corrected values of the signals. There are $n$ samples so this takes $O(n)$ time. We must also perform the multiplication $G = \Phi^\dagger \Phi$. Now we know that $Phi$ is an $n\times r$ matrix, so performing this calculation naively\footnote{For non-square matrices, naive multiplication is close to the best case time complexity.} will take $O(nr^2)$ time. We must finally calculate the largest eigenvalue of our $r\times r$ matrix $G$. This will take $O(r^3)$ time. So we find that the time complexity for the inner loop is given by
+In this inner loop, we must copy the time and frequency corrected values of the signals. There are $n$ samples so this takes $O(n)$ time. We must also perform the multiplication $G = \Phi^\dagger \Phi$. Now we know that $\Phi$ is an $n\times r$ matrix, so performing this calculation naively\footnote{For non-square matrices, naive multiplication is close to the best case time complexity.} will take $O(nr^2)$ time. We must finally calculate the largest eigenvalue of our $r\times r$ matrix $G$. This will take $O(r^3)$ time. So we find that the time complexity for the inner loop is given by
 
 \begin{eqnarray}
 t_{\textnormal{inner}} &=& O(n + nr^2 + r^3)\\
@@ -1087,21 +1095,244 @@ The main idea behind this technique for the Passive Radar detection problem is t
 	\end{itemize}
 \end{enumerate}
 
+The full implementation of this algorithm appears in appendix~\ref{app:rdt}. What follows below are the implementation details and logic of many of the steps of the algorithm.
+
 \subsection{Detecting Targets in Range-Doppler domain}
 \label{sec:detectT}
-Once the Range-Doppler map has been calculated, the next step is to detect the targets in this domain. 
+Once the Range-Doppler map has been calculated, the next step is to detect the targets in this domain. A lot of time was spent developing a model for target detection. It was believed that simulating a lot of targets for each possible receiver-transmitter location would allow us to model the response of the channel and determine some guaranteed levels for detection. This was also something that would only need to be done once, and would be akin to initialisation of the system.
+
+\bigskip
+
+Each receiver-transmitter pair was simulated with multiple targets at different distances away from the receiver. The compressed range-Doppler map showing the amplitude of the correlation versus time was then calculated. This, expectantly, showed a decaying exponential function. A least squares model was found for this line, and this was initially used as the threshold for a detection metric. An example of one of these plots appears in figure~\ref{fig:detect}.
+
+\bigskip
+
+This was deemed unfeasible later for a number of reasons. Firstly, in reality, different targets would have difference RCS values, so would have different detection characteristics in the Range-Doppler domain. Secondly, the path difference is not the metric that determines signal strength. If we recall equation~\ref{eqn:add} from section~\ref{sec:RCSeqn}, we can see that the scaling is not a function of the range, but a function of the product of the distances of the receiver and transmitter from the target. This means that two identical targets at the same path difference but different location can have different detection characteristics in the Range-Doppler domain.
+
+\bigskip
+
+Ultimately it was decided that a global threshold, above the known noise floor, would be used to determine the detection of targets. There still exists some ambiguity in the Doppler domain, which is governed by the radar ambiguity function. To combat this, all of the frequencies at a particular range were compressed onto each other, by taking the maximum value. In effect, we compressed our 2-D Range-Doppler map into a 1-D Range plot. Peak detection was then performed on this plot to determine the path differences that the targets occurred at. The code implementation for this appears in appendix~\ref{app:tdetect}.
 
 \subsection{Generating ellipse coefficients}
 \label{sec:ell1}
+Once we have detected the ranges that the targets occur at, we must convert these path differences into ellipse equations in the spatial domain. The transmitter and receiver become the foci of the ellipse, and the range, also known as the path difference, is given by $PF_1 + PF_2 - F_1F_2$, with respect to the ellipse in figure~\ref{fig:ell1}. It is known that
+
+\begin{equation}
+PF_1 + PF_2 = 2a
+\end{equation}
+
+\bigskip
+
+where $a$ is the major axis length. We know the distance between the the transmitter and receiver, $F_1F_2$, so we can work out this axis length by
+
+\begin{eqnarray}
+P_{\textnormal{diff}} &=& PF_1 + PF_2 - F_1F_2 \\
+P_{\textnormal{diff}} &=& 2a - F_1F_2 \\
+a &=& \frac{P_{\textnormal{diff}} + F_1F_2}{2}
+\end{eqnarray}
+
+\bigskip
+
+where $P_{\textnormal{diff}}$ is the detected path difference, and $F_1F_2$ is the distance between the transmitter and receiver. Both of these quantities are known. $a$ is one of the ellipse parameters known as the major axis length. There is another ellipse measurement, $f$, known as the linear eccentricity, and is a measure of the distance from the centre of the ellipse to the foci. The foci are located equidistant from the centre along a straight line, so this parameter is given by
+
+\begin{equation}
+f = \frac{F_1F_2}{2}
+\end{equation}
+
+\bigskip
+
+There is another relation that is used to determine the minor axis length, $b$, from the linear eccentricity. This is due to Pythagora's theorem, and relates $a$, $b$, and $f$ by
+
+\begin{eqnarray}
+f^2 &=& a^2 - b^2 \\
+b &=& \sqrt{a^2 - f^2}
+\end{eqnarray}
+
+\bigskip
+
+Now we have the major and minor axis lengths of any ellipse with a transmitter and receiver at the foci and a known path difference. 
+
+\bigskip
+
+The general equation for an ellipse with it's centre at $(x,y) = (x_0,y_0)$, and major and minor axis lengths of $a$ and $b$ is given by
+
+\begin{equation}
+\frac{(x-x_0)^2}{a^2} + \frac{(y-y_0)^2}{b^2} = 1
+\end{equation}
+
+\bigskip
+
+However, our ellipses may be arbitrarily rotated by an angle $\alpha$, that is determined by the physical layout of the system. If the transmitter is located at $(t_x,t_y)$ and the receiver is located at $(r_x,r_y)$, then the ellipse becomes rotated by an angle
+
+\begin{equation}
+\alpha = \tan^{-1}\Bigg(\frac{t_y-r_y}{t_x-r_x} \Bigg)
+\end{equation}
+
+\bigskip
+
+The equation of this rotated ellipse is
+
+\begin{equation}
+\label{eqn:ellrot}
+\frac{\bigg((x-x_0)\cos\alpha + (y-y_0)\sin\alpha\bigg)^2}{a^2} + \frac{\bigg((x-x_0)\sin\alpha - (y-y_0)\cos\alpha\bigg)^2}{b^2} = 1
+\end{equation}
+
+\bigskip
+
+All of these constants $a$, $b$, and $\alpha$ are known, and $x_0$ and $y_0$ are simply given by the midpoint between the transmitter and receiver.
+
+\begin{eqnarray}
+x_0 &=& \frac{t_x + r_x}{2} \\
+y_0 &=& \frac{t_y + r_y}{2} 
+\end{eqnarray}
+
+\bigskip
+
+This is not, however, a very useful form. Instead, this equation was turned into a bivariate quadratic equation. The form of this is
+
+\begin{equation}
+\label{eqn:biv}
+Q(x,y) = q_{xx}x^2 + q_{xy}xy + q_{yy}y^2 + q_x x + q_y y + q_0 = 0
+\end{equation}
+
+The equation~\ref{eqn:ellrot} was expanded and simplified to match the terms in equation~\ref{eqn:biv}. This was a long algebraic process, so will not appear in full here. The solutions to solving these equations, as well as the implementation details appear in the coded solution in appendix~\ref{app:ellParam}. The parameters are related as follows
+
+\begin{eqnarray}
+q_{xx} &=& \Bigg(\frac{\cos\alpha}{a} \Bigg)^2 + \Bigg(\frac{\sin\alpha}{b} \Bigg)^2 \\
+q_{yy} &=& \Bigg(\frac{\sin\alpha}{a} \Bigg)^2 + \Bigg(\frac{\cos\alpha}{b} \Bigg)^2 \\
+q_{xy} &=& \frac{2\cos\alpha\sin\alpha}{a^2} - \frac{2\cos\alpha\sin\alpha}{b^2} \\
+q_x &=& \frac{-2x_0\cos^2\alpha-2y_0\cos\alpha\sin\alpha}{a^2} + \frac{-2x_0\sin^2\alpha+2y_0\cos\alpha\sin\alpha}{b^2} \\
+q_y &=& \frac{-2y_0\sin^2\alpha-2x_0\cos\alpha\sin\alpha}{a^2} + \frac{-2y_0\cos^2\alpha+2x_0\cos\alpha\sin\alpha}{b^2} \\
+q_0 &=& \frac{(x_0\cos\alpha + y_0\sin\alpha)^2}{a^2} + \frac{(x_0\sin\alpha - y_0\cos\alpha)^2}{b^2} - 1
+\end{eqnarray}
 
 \subsection{Intersecting Ellipses}
 \label{sec:ell2}
+Once all of the receivers have calculated their Range-Doppler maps, detected targets in this domain, and determined the spatial ellipse parameters, these are all sent to a centralised location for processing. Each receiver may have detected multiple targets, so there will be multiple ellipses per receiver.
 
+\bigskip
+
+For each receiver, each of it's ellipses are intersected with each other ellipse for the other receivers. The code that facilitates this intersection appears in appendix~\ref{app:vote}, and the pseudo code for how this runs appears below.
+
+\begin{alltt}
+for  each receiver ri
+    for each ellipse e1 at receiver ri
+        for each receiver rj such that j>i
+            for each ellipse e2 at receiver rj
+                intersect \(\gets\) all intersections of e1 and e2
+            end
+        end
+    end
+end
+\end{alltt}
+
+\bigskip
+
+We still need to determine how to to intersect the ellipses. Initially an approach involving conic sections and projective geometry was employed\cite{proj}, but this was deemed to be too computationally expensive for our purposes. So it was decided to use a bivariate quadratic approach, as in \cite{intell2,intell3}.
+
+\bigskip
+
+We will model both ellipses we wish to intersect as bivariate quadratic equations, such as seen in equation~\ref{eqn:biv}. Let the two ellipses be called $Q$ and $R$, then
+
+\begin{eqnarray}
+Q(x,y) &=& q_{xx}x^2 + q_{xy}xy + q_{yy}y^2 + q_x x + q_y y + q_0 = 0 \\
+R(x,y) &=& r_{xx}x^2 + r_{xy}xy + r_{yy}y^2 + r_x x + r_y y + r_0 = 0
+\end{eqnarray}
+
+\bigskip
+
+These bivariate quadratic equations, can also be seen as quadratic equations in $x$, where
+
+\begin{eqnarray}
+q(x) &=& (q_0 + q_y y + q_{yy}y^2)  + (q_x + q_{xy}y)x + (q_{xx})x^2 = \sigma_0 + \sigma_1x + \sigma_2x^2\\
+r(x) &=& (r_0 + r_y y + r_{yy}y^2)  + (r_x + r_{xy}y)x + (r_{xx})x^2 = \tau_0 + \tau_1x + \tau_2x^2
+\end{eqnarray}
+
+\bigskip
+
+These two polynomials, $q(x)$ and $r(x)$, only have a common root if the Bezout determinant is zero\cite{intell3},
+
+\begin{equation}
+\label{eqn:bez}
+(\sigma_2\tau_1 - \sigma_1\tau_2)(\sigma_1\tau_0 - \sigma_0\tau_1) - (\sigma_2\tau_0 - \sigma_0\tau_2)^2 = 0.
+\end{equation}
+
+\bigskip
+
+This is constructed by
+\begin{equation}
+\label{eq16}
+0 = \sigma_2r(x) - \tau_2q(x) = (\sigma_2\tau_1 - \sigma_1\tau_2)x + (\sigma_2\tau_0 - \sigma_0\tau_2)
+\end{equation}
+and
+\begin{equation}
+\label{eq17}
+0 = \tau_1 q(x) - \sigma_1r(x) = (\sigma_2\tau_1 - \sigma_1\tau_2)x^2 + (\sigma_0\tau_1 - \sigma_1\tau_0).
+\end{equation}
+
+\bigskip
+
+We first solve for $x$ in Equation~\ref{eq16}, and substitute this result into equation~\ref{eq17} to produce the Bezout determinant seen in equation~\ref{eqn:bez}. When this is zero, we can solve for the common root from equation~\ref{eq16}.
+
+\begin{equation}
+\bar{x} = \frac{\sigma_2\tau_0 - \sigma_0\tau_2}{\sigma_1\tau_2 - \sigma_2\tau_1}
+\end{equation}
+
+\bigskip
+
+This is then substituted into our Bezout determinant to obtain a quartic polynomial in $y$. This is quite a large equations that contains many terms, but appears in full in the implementation that appears in appendix~\ref{app:ellInt}.
+
+\bigskip
+
+This yields at most four possible values for $y$, and each of these has 2 possible $x$ values, meaning a maximum of 8 solutions. We know that ellipses can intersect in at most 4 locations, so some of these may be repeated solutions, or may not lie on both curves. Both of these factors must be considered and accounted for when implementing this system. Only the solutions that satisfy
+
+\begin{equation}
+Q(x,y)=0, R(x,y)=0,
+\end{equation}
+
+are kept as the intersection points.
 
 \subsection{Voting and Consensus}
 \label{sec:Vote}
 
-Putting the data together. THere is no simple way transistivity a-b<e   b-c<e   a-c<e
+At this point in the algorithm, we have a large list of intersection points corresponding to possible target locations. There are on order of $O(r^2)$ intersection points that we need some way to group. Grouping these points is a non-trivial task, for the following reason.
+
+\bigskip
+If we wish to group points together based on a threshold minimum distance $\epsilon$, we could have the following scenario with three points $a$, $b$, and $c$
+
+\begin{eqnarray}
+|a-b| &<& \epsilon \\
+|b-c| &<& \epsilon \\
+|a-c| &>& \epsilon
+\end{eqnarray}
+
+\bigskip
+
+Using a simplistic approach, we are faced with the question of how to group these 3 symbols, since $a$ and $b$ belong together, $b$ and $c$ belong together, but $a$ and $c$ do not.
+
+\bigskip
+
+The implementation decided upon in this case is a greedy accumulator approach. This approach will deliver us a list of 'group points', and the number of intersection points (i.e. votes) that contributed to that. The value of the 'group point' is the mean of all of the intersection points that voted for it. As mentioned previously, this is a greedy algorithm, so it is not optimal, and not guaranteed to converge to the same solution for different orderings of the same points.
+
+\bigskip
+
+Intersection points are analysed linearly, and moved into an initially empty 'group point' list. As each new intersection point is analysed, it is compared to each other 'group point' currently in the list. If it is below a threshold value, it is accumulated into that 'group point' and the mean value is updated and vote count incremented. If it is not within a threshold of any of the 'group points', it becomes its own 'group point' with the same value and a vote count of 1.
+
+\bigskip
+
+Determining the distance threshold is a matter of calculating the maximum error possible in the position of the received signals in the Range-Doppler map. This is linked to the spatial resolution that was calculated in section~\ref{sec:TFE} to be 37.5 m. We will allow for an amount of error on this figure when calculating the intersections. 
+
+\bigskip
+
+Once all of the points have been analysed, the 'group point' with the largest vote count above a vote threshold is deemed to be the location of a target. The vote threshold is the minimum number of votes required to count a point as a target and not just noise or a random intersection. It will be a linear function of the number of receivers, as a certain percentage of receivers must agree that a point contains a target for there to actually be one.
+
+\bigskip
+
+Every time a 'group point' is determined to be a target, all of the ellipses corresponding to that 'group point' are deleted, and the algorithm is run again, this time with many less ellipses to intersect. This process continues until all ellipses have been exhausted, or the maximum vote count is below the vote threshold and the algorithm stops.
+
+\bigskip
+
+This has been partially implemented in MATLAB and appears in appendix~\ref{app:vote}. A voting algorithm such as this suits a programming language that can better deal with pointers or references to objects, such as Java or C. There are also better implementations of voting and consensus algorithms\cite{vote1,vote2,vote3} that run in linear time, but do not transfer well to MATLAB. However, the above implementation has been shown to work, and be time effective, as will be seen in section~\ref{sec:res}.
 
 
 \subsection{Time complexity}
@@ -1109,7 +1340,7 @@ A time complexity analysis was performed on the Range-Doppler transformation alg
 
 \bigskip
 
-This algorithm can perform all of the Range-Doppler map calculations simultaneously, because the data does not need to be amalgamated before computation. So for a given receiver, to calculate the Range-Doppler map, you need to calculate one FFT, and one IFFT for each frequency. The length of the FFT that is being calculated is $n+x$ because of the padding required so that when the correlation wraps around, there are no cross-terms in the calculation. The time complexity of the FFT algorithm is known to be $On\log n$, so the time to calculate all of the Range-Doppler maps (assuming parallel computation) is
+This algorithm can perform all of the Range-Doppler map calculations simultaneously, because the data does not need to be amalgamated before computation. So for a given receiver, to calculate the Range-Doppler map, you need to calculate one FFT, and one IFFT for each frequency. The length of the FFT that is being calculated is $n+x$ because of the padding required so that when the correlation wraps around, there are no cross-terms in the calculation. The time complexity of the FFT algorithm is known to be $O(n\log n)$, so the time to calculate all of the Range-Doppler maps (assuming parallel computation) is
 
 \begin{equation}
 t_{\textnormal{rd map}} = O\bigg(f(n+x) \log (n+x) \bigg)
@@ -1117,7 +1348,7 @@ t_{\textnormal{rd map}} = O\bigg(f(n+x) \log (n+x) \bigg)
 
 \bigskip
 
-Now, this can be further simplified by considering that the maximum range that is detectable, which optimally should be our value for $x$, is actually a function of how far the samples we have received have travelled. The furthest that a signal could have travelled is a function of how long it has travelled for, which has a direct linear relation with the number of samples received, $n$. So we have that $x$ is $\Omega(n)$, so we can simplify the time to calculate the Range-Doppler maps to
+Now, this can be further simplified by considering that the maximum range that is detectable, which optimally should be our value for $x$, is actually a function of how far the samples we have received have travelled. The furthest that a signal could have travelled is a function of how long it has travelled for, which has a direct linear relation with the number of samples received, $n$. So we have that $x$ is $\Theta(n)$, so we can simplify the time to calculate the Range-Doppler maps to
 
 \begin{equation}
 t_{\textnormal{rd map}} = O\bigg(fn \log n \bigg)
@@ -1141,22 +1372,153 @@ t_{\textnormal{rdt}} &=&  O\bigg(fn \log (n) + n + r^2 \bigg) \\
 
 Now in most cases the $r^2$ term is going to be negligible because $r^2 \ll fn \log (n)$. However, this thesis is considering the case where there are large arrays of receivers, so it would be important to note that this could become a limiting factor in the future.
 
-This is an example picture, shown in \fig{fig:rdm1}
-
+\begin{figure}[p]
+\centering
+\includegraphics{detect.png}
+\caption{Target detection characteristics in the Range-Doppler domain}
+\label{fig:detect}
+\end{figure}
 
 \begin{figure}[p]
 \centering
-\includegraphics{RDMAP2.png}
-\caption{Range-Doppler Map with 4 targets}
-\label{fig:rdm1}
+\includegraphics{ell1.png}
+\caption{Ellipse and some mathematical properties \cite{ellPic}}
+\label{fig:ell1}
 \end{figure}
 
+\cleardoublepage
 
-\chapter{Conclusions}
+\chapter{Results and Conclusions}
 
-\section{Summary and conclusions}
+\section{Results}
+\label{sec:res}
+The Range-Doppler Transformation algorithm described in the previous section was then implemented and tested. The base test case involved a receiver array of 16 radar receiver in a 4 by 4 array. These receivers were centred at the origin and spaced a distance of 200 m away from the next closest receiver. A single transmitter was positions at the co-ordinates $(x,y) = (1000,0)$. 
 
-\section{Possible future work}
+\bigskip
+
+This scenario was then tested with multiple permutations of zero to four targets. These targets were selected so that they sometimes overlapped in the frequency domain, sometimes overlapped in the range domain, and sometimes overlapped in both. The algorithm was able to handle all of these cases.
+
+\bigskip
+
+One of the reasons that it was able to be so robust to these sorts of shadows, is because of the multiple redundancies in the receivers. A target that may be shadowed by another target in the Range-Doppler map of one receiver, may have them spatially, or frequency separated in the map of another receiver. It is this robustness to both target shadows and ambiguity functions that makes this algorithm so effective.
+
+\bigskip
+
+One such scenario that illustrates this point well is this example case with two receivers
+\begin{itemize}
+\item{One target located at $(1100,500)$ with velocity vector of $(200,-200)$,}
+\item{The second target being stationary and located at $(0,700)$.}
+\end{itemize}
+
+\bigskip
+
+A graph showing the Range-Doppler maps for all of the receivers shows that some of them have two distinct targets in this domain, some have the targets blurred together at the same range, and some others can only detect one of the targets. This graph can be seen in figure~\ref{fig:rdbig}.
+
+\begin{figure}[p]
+\centering
+\includegraphics{rdbig2.png}
+\caption{Collection of Range-Doppler maps for receiver array with two simulated targets}
+\label{fig:rdbig}
+\end{figure}
+
+\bigskip
+
+The spatial domain plot showing all of the receivers, transmitters and ellipses due to detected targets in the Range-Doppler maps appears below in figure~\ref{fig:xyell}. This figure clearly shows an abundance of intersection points around the target located at $(1100,500)$. There is also a slightly smaller concentration of intersections at the second target's location $(0,700)$. This position has fewer intersections because of the aforementioned Range-Doppler maps with only one visible target. 
+
+\begin{figure}[p]
+\centering
+\includegraphics{xyell6.png}
+\caption{Spatial domain plot of all receivers, transmitters, and Range-Doppler map transformed ellipses}
+\label{fig:xyell}
+\end{figure}
+
+\bigskip
+
+The output of the algorithm is just two points, as seen in figure~\ref{fig:rdout}. These points are
+
+\begin{itemize}
+	\item{$(1077,520)$ - a distance of 30 m from the actual target at $(1100,500)$}
+	\item{$(-45,675)$ - a distance of 51 m from the actual target at $(0,700)$}
+\end{itemize}
+
+\begin{figure}[p]
+\centering
+\includegraphics{rdout.png}
+\caption{Output of the Range-Doppler Transform Algorithm}
+\label{fig:rdout}
+\end{figure}
+
+\bigskip
+
+So the algorithm was able to predict, to a high degree of accuracy, the fact that there were targets present, the exact number of targets, and the precise location of the targets. The maximum resolution attainable for a sampling frequency of 8 MHz was calculated to be 37.5 m in section~\ref{sec:TFE}. The fact that this algorithm is getting errors at this order of magnitude tells us that it is extremely accurate for the given sampling frequency.
+
+\bigskip
+
+This algorithm is also robust to timing and synchronisation errors, as the raw data is not sent to the centralised computer. Instead, only the ellipse parameters are sent, which are much more robust to timing errors. A synchronisation error of 1 sample in other algorithms can lead to an error as big as the maximum resolution of 37.5 m. In Range-Doppler transformations, a synchronisation error of 1 sample can only lead to an error of at most the distance that a target can move in that time. A target would need to be travelling at the speed of light\footnote{Because \mbox{$v = \frac{d}{t} = \frac{d}{\frac{1}{f_s}} = d\times f_s = 37.5\times 8e6 = C$}} for the error due to synchronisation to matter for the Range-Doppler transformation.
+
+\newpage
+\section{Conclusions}
+
+This thesis has studied the topic of Passive Radar, and proposed a new algorithm for solving the passive radar detection problem. The Range-Doppler Transformation is a novel algorithm intended for use in passive radar detection schemes with large arrays of receivers. It has shown to be successful in medium scale simulations, as well as having a very high degree of accuracy.
+
+\bigskip
+
+The algorithm has been shown to be robust to many effects that plague current passive radar algorithms when they are implemented in the real world. It has a much better tolerance to timing and synchronisation effects, meaning that it is easier to set up a live system.
+
+\bigskip
+
+The multiple redundancies due to the large number of receivers means that even if a target falls within the ambiguity function of another target and cannot be distinguished at one receiver, these two targets are very like to be distinguishable at other receivers. This means that more targets will be able to be detected in more situations than using other methods.
+
+\bigskip
+
+This algorithm also has a much better time complexity than other naively implemented algorithms. This is mostly due to the fact that a lot of the computation is performed in parallel at the receivers themselves. Another bonus this on-board computation brings, is that instead of streaming all of the raw data to a centralised location for processing, only the ellipse parameters of the detected targets needs to be transmitted. This represents a massive decrease in the amount of bandwidth required for implementing this algorithm.
+
+\bigskip
+
+The Range-Doppler transformation algorithm has many strengths both computationally, and with respect to the ease of setting up a real world trial. 
+
+\cleardoublepage
+
+\chapter{Future Directions}
+
+This thesis is complete in the fact that it has achieved all of its goals. However there is always room for further developments and improvements. This section will discuss a few of the directions this project could be taken into the future.
+
+\bigskip
+
+This project could benefit greatly from more analysis of other detection algorithms. Implementing other algorithms similar to this could spawn ideas for new hybrid algorithms, taking the best parts of a number of algorithms. This would require much more time and research into other Passive Radar detection algorithms, and the ability to implement these efficiently.
+
+\bigskip
+
+One of the places where the algorithm can be improved is the detection metric for targets in Range-Doppler domain. Initially, a lot of effort was expended trying to implement a detection system that could be robust and accurate. This method was deemed inappropriate and a global threshold was used instead. This global noise floor threshold could be improved to a better method, that would provide more redundancy and error detection than the current system. 
+
+\bigskip
+
+This algorithm could also be improved to detect the velocity of the target as well. This would involve keeping track of the Doppler shift that correspond to each ellipse, and then calculating the velocity that would cause this Doppler for all of the ellipses that intersect.
+
+\bigskip
+
+Clutter is not considered in this thesis, but if there were to be large numbers of radar receivers, clutter would be an unavoidable problem. A good clutter model could be developed and implemented, perhaps initially by placing random, small RCS targets with zero velocity near the receivers. A method to counteract these effects would need to be developed, perhaps using a Wiener filter, or a Moore-penrose inverse to undo the noise of the clutter.
+
+\bigskip
+
+The Range-Doppler transformation algorithm would greatly benefit from being implemented in a language that is better suited for the voting and consensus algorithms. Implementing this algorithm in an Object-Oriented environment such a Java or C++ would not only increase the ease of implementation of the voting algorithm, but also probably increase the efficiency of the algorithm.
+
+\bigskip
+
+The voting algorithm itself could also be developed further. Currently the algorithm uses a greedy search for the targets, however better voting algorithms exist, as do ones that run in linear time. Perhaps a non-greedy algorithm would deliver better results, or a more tried and tested algorithm, like the RANSAC algorithm could be implemented for this case. Either way, more analysis of the voting and consensus step is definitely required.
+
+\bigskip
+
+The tests that the algorithm passed were mostly small scale tests in the context of the motivation of the algorithm design. More testing would need to be done to confirm the accuracy and scalability of this algorithm if it were to be deployed in the real world.
+
+\bigskip
+
+A small scale deployment of receivers could be used to test this algorithm in the real world. Because of the robustness to timing and synchronisation errors, this would be easier to implement than other passive radar detection schemes. 
+
+\bigskip
+
+Finally, more analysis can be done on the Range-Doppler transformation algorithm itslef. A Receiver operator characteristic analysis could be performed to determine how the system responds to different thresholds and allowances. This would be useful in comparing the algorithm's accuracy to other algorithms.
+
 
 \appendix
 
@@ -1519,6 +1881,7 @@ ylabel('Distance in y-direction (m)');
 \end{spverbatim}
 
 \section{Range-Doppler Transformation}
+\label{app:rdt}
 This section will list some of the code used in making and testing the Range-Doppler Transformation method.
 \subsection{Signal Generation}
 The code for signal generation for the RD transformation was made a little cleaner and added some extra functionality compared with the code used for GCCA. Again this file is called \verb+signal_gen.m+.
@@ -1780,6 +2143,7 @@ posRx = [XA(:), YA(:)];
 \end{spverbatim}
 
 \subsection{Target Detection}
+\label{app:tdetect}
 This file, \verb+detectTarg+, detects the locations of targets in the area from the range-doppler map.
 
 \begin{spverbatim}
@@ -1839,6 +2203,7 @@ end
 \end{spverbatim}
 
 \subsection{Determine Ellipse Parameters}
+\label{app:ellParam}
 This function, \verb+getEllParam.m+, returns the parameters for an ellipse with given constraints.
 
 \begin{spverbatim}
@@ -1884,6 +2249,7 @@ param = [qxx, qyy, qxy, qx, qy, q0];
 \end{spverbatim}
 
 \subsection{Ellipse Intersections}
+\label{app:ellInt}
 This file, \verb+findEllIntersect.m+, finds the intersection of two ellipses.
 
 \begin{spverbatim}
@@ -1968,6 +2334,7 @@ out = real(out(ids,:));
 \end{spverbatim}
 
 \subsection{Vote and Consensus}
+\label{app:vote}
 This file, \verb+getTargetLocation.m+, applies the intersection, voting and consensus algorithm.
 
 \begin{spverbatim}
@@ -2159,16 +2526,51 @@ num2str(ID2)]);
 
 \chapter{Companion disk}
 
-The companion disk contains all of the 
+The companion disk contains all of the materials developed during this thesis.
 This disk is also available online at \\
 https://github.com/lewythefly/ENGG4801-Passive-Radar-Detection
 
-If you wish to make some computer files available to your examiners,
-you can list and describe the files here.  The files can be supplied
-on a disk and inserted in a pocket fixed to the inside back cover.
+\bigskip
 
-The disk will not be needed if you can specify a URL from which the
-files can be downloaded.
+The following information appears in the root directory of the companion CD in the file \verb+readme.txt+.
+
+\begin{spverbatim}
+Thesis: Passive Radar Detection using Range-Doppler Transformations
+Student: Lewis Chambers
+Std #: 42328188
+email: lewis.chambers@uqconnect.edu.au
+Supervisor: Vaughan Clarkson
+
+This is the base directory for the companion CD.
+
+The completed assessment appears in the folders:
+ - A1 Project Proposal
+ - A2 Progress Seminar
+ - A3 Demonstration
+ - A4 Thesis
+
+The endnote data contained in the proposal appears in the folder 'Endnote'.
+
+A backup history is contained in the folder 'History - Backups'.
+
+The files developed for this Thesis are contained in the folder 'MATLAB files'. More detail appears in this folder.
+
+Other refernce material is contained in the folder 'Other'.
+
+Some of the research papers cited in the thesis are contained in the folder 'Research Papers'
+\end{spverbatim}
+\bigskip
+More information is located in the \verb+readme.txt+ file in the folder \verb+MATLAB files+.
+\begin{spverbatim}
+Note: All folders in this directory with subfolders have a script addp.m. This script will add all of the current directory to the MATLAB path so you can run all of the files.
+
+'Paper 1' contains the working version of GCCA algorithm
+'Paper 1 - Optimisation' contains the tested and unsuccessful optimisations using the power method
+'Paper 2' contains the incomplete works on Bayesian detection of signals with known rank
+'Presentation' contains the files used for the live demo midway through the thesis
+'Range Doppler Transform' contains all of the files for the Range Doppler Transform algorithm
+'Tests and Exploration' contains some extra files used for testing and understanding of concepts
+\end{spverbatim}
 
 \cleardoublepage
 
@@ -2228,6 +2630,21 @@ files can be downloaded.
 \bibitem{SNR} M.Skolnik, \emph{Introduction to Radar Systems}, McGraw Hill, 1980
 
 \bibitem{thermal} D.Barton, \emph{Modern Radar Systems Analysis}, Artech, 1988
+
+\bibitem{ellPic} Dave3457 (username), \emph{Ellipse Properties of Directrix and String Construction} [online]. Available: \verb+http://upload.wikimedia.org/wikipedia/commons/6/+
+\verb+65/Ellipse_Properties_of_Directrix_and_String_Construction.svg+, 3 Jul. 2010.
+
+\bibitem{proj} Richter-Gebert, J. 2011, \emph{Perspectives on projective geometry: a guided tour through real and complex geometry}, Springer, New York; Heidelberg; Berlin.
+
+\bibitem{intell2} R.G. Edwards, \emph{Solution coordinates for a pair of bivariate quadratic equations}, The Maptoops Company, [online]. Available: \verb+http://www.maptools.home.comcast.net/~maptools/BivariateQuadratics.pdf+, 17 Sep. 2013.
+
+\bibitem{intell3} D. Eberly, \emph{The Area of Intersecting Ellipses}, Geometric Tools, LLC, [online]. Available: \verb+http://www.geometrictools.com/Documentation/AreaIntersectingEllipses.pdf+, 15 Aug. 2014
+
+\bibitem{vote1} R.S. Boyer. In R.S. Boyer (ed.), \emph{Automated Reasoning: Essays in Honor of Woody Bledsoe, Automated Reasoning Series}, Kluwer Academic Publishers, Dordrecht, The Netherlands, 1991, pp. 105-117.
+
+\bibitem{vote2} Parhami, B. 1994, "Voting algorithms", \emph{IEEE Transactions on Reliability}, vol. 43, no. 4, pp. 617-629.
+
+\bibitem{vote3} Kumar, A., "Performance analysis of a hierarchical quorum consensus algorithm for replicated objects," \emph{Distributed Computing Systems, 1990. Proceedings., 10th International Conference on} , vol., no., pp.378,385, 28 May-1 Jun 1990
 
 \end{thebibliography}
 
